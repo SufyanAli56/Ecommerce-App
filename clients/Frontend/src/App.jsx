@@ -1,11 +1,24 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Register from "./pages/auth/Register";
 
-const App = () => {
+// 添加简单的404页面组件
+const NotFound = () => <div>404 - Page Not Found</div>;
+
+function App() {
   return (
-    <div className='bg-red-200'>
-      <h1>Hello ma ho don</h1>
-    </div>
-  )
+    <Router>
+      <Routes>
+     
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        
+        <Route path="/register" element={<Register />} />
+       
+   
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
