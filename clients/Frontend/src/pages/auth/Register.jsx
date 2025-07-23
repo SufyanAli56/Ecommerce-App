@@ -17,7 +17,7 @@ function Register() {
     try {
       await axios.post("http://localhost:5000/api/auth/send-otp", { email });
       localStorage.setItem("pendingEmail", email);
-      navigate("/verify-otp");
+      navigate("/verifyOtp");
     } catch (error) {
       alert("Failed to send OTP. Please try again.");
     } finally {
