@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Register from "./pages/auth/Register";
 import VerifyOtp from "./pages/auth/VerifyOtp";
+import SetPassword from "./pages/auth/SetPassword";
 
 // 添加简单的404页面组件
 const NotFound = () => <div>404 - Page Not Found</div>;
@@ -15,7 +16,7 @@ function App() {
         
         <Route path="/register" element={<Register />} />
         <Route path="/verifyOtp" element={<VerifyOtp />} />
-   
+        <Route path="/set-password" element={<SetPassword />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
