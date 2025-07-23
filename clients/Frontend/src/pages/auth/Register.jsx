@@ -59,8 +59,8 @@ function Register() {
             disabled={isLoading}
             className={`w-full py-3.5 px-4 rounded-lg font-medium text-white transition-all duration-300 flex items-center justify-center
               ${isLoading 
-                ? 'bg-blue-400 cursor-not-allowed' 
-                : 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 shadow-md hover:shadow-lg'}
+                ? 'bg-indigo-500  cursor-not-allowed' 
+                : 'bg-indigo-500  hover:from-blue-600 hover:to-blue-700 shadow-md hover:shadow-lg'}
             `}
           >
             {isLoading ? (
