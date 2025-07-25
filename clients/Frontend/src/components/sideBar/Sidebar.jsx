@@ -1,21 +1,21 @@
 import React from 'react';
 
-function Sidebar() {
+const categories = [
+  'Dresses', 'Shirts', 'Jeans', 'Swimwear', 'Sleepwear',
+  'Sportswear', 'Jumpsuits', 'Blazers', 'Jackets', 'Shoes'
+];
+
+const Sidebar = () => {
   return (
-    <aside className="w-64 bg-white shadow-lg border-r border-gray-200 p-6">
-      <div className="flex items-center mb-10">
-        <div className="bg-blue-500 w-8 h-8 rounded-lg mr-2"></div>
-        <span className="text-xl font-bold text-gray-800">EcomDash</span>
-      </div>
-      <nav className="space-y-4 text-gray-700">
-        <a href="#" className="block font-medium hover:text-blue-600">Dashboard</a>
-        <a href="#" className="block font-medium hover:text-blue-600">Orders</a>
-        <a href="#" className="block font-medium hover:text-blue-600">Products</a>
-        <a href="#" className="block font-medium hover:text-blue-600">Customers</a>
-        <a href="#" className="block font-medium hover:text-blue-600">Reports</a>
-      </nav>
-    </aside>
+    <div className="w-64 bg-white shadow border border-gray-200">
+      <div className="bg-rose-300 px-4 py-3 font-bold text-white">Categories</div>
+      <ul className="divide-y">
+        {categories.map(cat => (
+          <li key={cat} className="px-4 py-2 hover:bg-gray-100 cursor-pointer">{cat}</li>
+        ))}
+      </ul>
+    </div>
   );
-}
+};
 
 export default Sidebar;
