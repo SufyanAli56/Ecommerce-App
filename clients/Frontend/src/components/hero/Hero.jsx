@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Img1 from '../../assets/carousel-1.jpg'
+import Img2 from '../../assets/carousel-2.jpg'
 const slides = [
   {
     img: Img1,
@@ -8,7 +9,7 @@ const slides = [
     offer: '10% OFF YOUR FIRST ORDER',
   },
   {
-    img: Img1,
+    img: Img2,
     title: 'New Summer Look',
     offer: 'Exclusive Offers Just For You',
   },
@@ -43,7 +44,7 @@ const Hero = () => {
       </div>
 
       {/* Hero Slider */}
-      <div className="relative w-full h-[400px] overflow-hidden">
+      <div className="relative w-[1000px] ml-6 h-[400px] overflow-hidden">
         <img
           src={slides[current].img}
           alt="Slide"
