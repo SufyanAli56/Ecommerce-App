@@ -7,7 +7,7 @@ const categories = [
 
 const Sidebar = () => {
   return (
-    <div className="w-64 bg-white shadow border border-gray-200">
+    <div className="w-64 ml-24 bg-white shadow border border-gray-200">
       <div className="bg-rose-300 px-4 py-3 font-bold text-white">Categories</div>
       <ul className="divide-y">
         {categories.map(cat => (
