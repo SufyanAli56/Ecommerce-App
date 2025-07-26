@@ -10,14 +10,23 @@ const Dashboard = () => {
     <div className="min-h-screen font-poppins bg-white">
       <Topbar />
       <MainNavbar />
-      <div className="flex">
-        <Sidebar />
-        <div className="flex-1">
+
+      {/* Responsive layout */}
+      <div className="flex flex-col lg:flex-row gap-4 px-4 mt-4">
+        {/* Sidebar */}
+        <div className="w-full lg:w-1/4">
+          <Sidebar />
+        </div>
+
+        {/* Main Content */}
+        <div className="w-full lg:w-3/4">
           <Hero />
         </div>
-   
       </div>
-      <Banner/>
+
+      <div className="px-4 mt-6">
+        <Banner />
+      </div>
     </div>
   );
 };

@@ -8,11 +8,11 @@ const categories = [
 
 const Sidebar = () => {
   return (
-    <div className="w-64 ml-24 bg-white shadow border border-gray-200 rounded-lg overflow-hidden">
+    <div className="w-full sm:w-64 bg-white shadow border border-gray-200 rounded-lg overflow-hidden">
       <div className="bg-rose-700 px-4 py-3 font-bold text-white text-lg tracking-wide">
         Categories
       </div>
-      <ul className="divide-y divide-gray-200">
+      <ul className="divide-y divide-gray-200 max-h-[80vh] overflow-y-auto">
         {categories.map((cat, index) => (
           <li
             key={index}
