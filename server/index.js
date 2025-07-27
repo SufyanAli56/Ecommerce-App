@@ -19,5 +19,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/cart", cartRoutes); 
 app.use("/api/cart", require("./routes/cartRoutes"));
+app.use("/uploads", express.static("uploads"));
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
