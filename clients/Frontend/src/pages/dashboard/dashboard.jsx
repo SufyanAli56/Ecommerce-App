@@ -5,6 +5,7 @@ import Sidebar from '../../components/sideBar/Sidebar';
 import Hero from '../../components/hero/Hero';
 import Banner from '../../components/banner/Banner';
 import Dresses from '../../components/dresses/Dresses';
+import Cards from '../../components/cards/Cards';
 
 const Dashboard = () => {
   return (
@@ -28,6 +29,7 @@ const Dashboard = () => {
       <div className="px-4 mt-6">
         <Banner />
         <Dresses/>
+        <Cards/>
       </div>
     </div>
   );

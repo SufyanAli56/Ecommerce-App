@@ -12,7 +12,7 @@ const Topbar = () => {
   const [showIcons, setShowIcons] = useState(false);
 
   return (
-    <div className="bg-[#f1f3fc] px-4 sm:px-6 py-2 text-sm text-gray-700 font-poppins">
+    <div className="bg-[#bdeeea] px-4 sm:px-6 py-2 text-sm text-gray-700 font-poppins">
       <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
         
         {/* Left Links */}
