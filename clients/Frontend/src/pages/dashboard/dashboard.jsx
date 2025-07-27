@@ -4,6 +4,7 @@ import MainNavbar from '../../components/navbar/Navbar';
 import Sidebar from '../../components/sideBar/Sidebar';
 import Hero from '../../components/hero/Hero';
 import Banner from '../../components/banner/Banner';
+import Dresses from '../../components/dresses/Dresses';
 
 const Dashboard = () => {
   return (
@@ -26,6 +27,7 @@ const Dashboard = () => {
 
       <div className="px-4 mt-6">
         <Banner />
+        <Dresses/>
       </div>
     </div>
   );
