@@ -29,7 +29,7 @@ const AllProducts = () => {
              <img
   src={`http://localhost:5000/${product.image}`}
   alt={product.name}
-  className="w-full h-68 object-cover object-top rounded mb-3 transition-transform duration-300 transform hover:scale-105"
+  className="w-full h-78 object-cover object-top rounded mb-3 transition-transform duration-300 transform hover:scale-105"
 />
 
               <h3 className="text-lg font-semibold">{product.name}</h3>
