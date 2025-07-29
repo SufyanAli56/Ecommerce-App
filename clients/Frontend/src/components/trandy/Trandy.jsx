@@ -5,7 +5,8 @@ import { toast } from "react-toastify";
 import { FaShoppingCart, FaEye } from "react-icons/fa";
 import useCartStore from "../../store/cartStore";
 
-const Trandy = () => {
+// Reusable Trending Products Component with heading as prop
+const Trandy = ({ heading = "Trending Products" }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -48,7 +49,7 @@ const Trandy = () => {
     toast.info(`🔍 Viewing details for ${product.name}`);
     setTimeout(() => {
       navigate(`/product/${product._id}`);
-    }, 500); // slight delay so user sees toast
+    }, 500);
   };
 
   if (loading) return <p className="p-6 text-center">Loading...</p>;
@@ -56,9 +57,15 @@ const Trandy = () => {
 
   return (
     <div className="p-6 bg-white">
-      <h2 className="text-2xl font-bold mb-4 text-gray-800">Trending Products</h2>
+      {/* Heading with red lines */}
+      <div className="flex items-center justify-center mb-6">
+        <div className="h-[2px] w-16 bg-red-500 mr-4"></div>
+        <h2 className="text-2xl font-bold text-gray-800 text-center">{heading}</h2>
+        <div className="h-[2px] w-16 bg-red-500 ml-4"></div>
+      </div>
+
       {products.length === 0 ? (
-        <p className="text-gray-600">No trendy products found.</p>
+        <p className="text-gray-600 text-center">No trendy products found.</p>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {products.map((product) => (
@@ -75,9 +82,7 @@ const Trandy = () => {
               </div>
 
               <h3 className="text-lg font-semibold text-gray-800 mt-3">{product.name}</h3>
-              <p className="text-sm text-gray-600 mb-1 line-clamp-2">
-                {product.description}
-              </p>
+              <p className="text-sm text-gray-600 mb-1 line-clamp-2">{product.description}</p>
               <p className="text-md font-bold text-gray-900">${product.price}</p>
               <p className="text-xs text-gray-500 mb-3">
                 Stock: {product.stock > 0 ? `${product.stock} in stock` : "Out of stock"}

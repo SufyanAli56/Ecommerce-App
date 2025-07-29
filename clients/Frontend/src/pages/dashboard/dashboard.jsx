@@ -35,6 +35,8 @@ const Dashboard = () => {
         <Cards/>
         <Trandy/>
         <Updated/>
+        <Trandy heading="Just Arrived
+" />
       </div>
     </div>
   );
