@@ -9,6 +9,7 @@ import Cards from '../../components/cards/Cards';
 import Trandy from '../../components/trandy/Trandy';
 import CartNavbar from '../../components/cartNavbar/CartNavbar';
 import Updated from '../../components/updated/Updated';
+import Testnomilas from '../../components/testnomials/Testnomilas';
 
 const Dashboard = () => {
   return (
@@ -37,6 +38,7 @@ const Dashboard = () => {
         <Updated/>
         <Trandy heading="Just Arrived
 " />
+<Testnomilas/>
       </div>
     </div>
   );
