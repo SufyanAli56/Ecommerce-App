@@ -10,6 +10,7 @@ import Trandy from '../../components/trandy/Trandy';
 import CartNavbar from '../../components/cartNavbar/CartNavbar';
 import Updated from '../../components/updated/Updated';
 import Testnomilas from '../../components/testnomials/Testnomilas';
+import Footer from '../../components/footer/Footer';
 
 const Dashboard = () => {
   return (
@@ -39,6 +40,7 @@ const Dashboard = () => {
         <Trandy heading="Just Arrived
 " />
 <Testnomilas/>
+<Footer/>
       </div>
     </div>
   );

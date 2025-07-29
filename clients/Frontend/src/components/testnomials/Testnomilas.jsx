@@ -20,17 +20,17 @@ const Testnomilas = () => {
         <div className="h-[2px] w-16 bg-red-500 ml-4"></div>
       </div>
 
-      {/* Static Row of Images */}
-      <div className="flex justify-center items-center gap-10">
+      {/* Responsive Grid of Images */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
         {images.map((img, index) => (
           <div
             key={index}
-            className="w-45 h-48 bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+            className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
           >
             <img
               src={img}
               alt={`Testimonial ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-40 sm:h-48 object-cover"
             />
           </div>
         ))}
