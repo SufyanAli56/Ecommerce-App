@@ -8,7 +8,7 @@ const Cards = () => {
       {/* Spring Collection Card */}
       <div className="flex flex-col sm:flex-row items-center bg-[#bdeeea] rounded-xl p-4 w-full md:w-1/2 shadow-md">
         <div className="sm:order-1 w-full sm:w-auto flex justify-center mb-4 sm:mb-0">
-          <div className="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-32 md:w-40 md:h-40 flex items-center justify-center overflow-hidden">
+          <div className="  rounded-xl w-32 h-32 md:w-40 md:h-40 flex items-center justify-center overflow-hidden">
             <img src={Img1} alt="Spring Collection" className="object-contain w-full h-full" />
           </div>
         </div>
@@ -37,7 +37,7 @@ const Cards = () => {
         </div>
 
         <div className="sm:order-2 w-full sm:w-auto flex justify-center mt-4 sm:mt-0">
-          <div className="bg-gray-200 border-2 border-dashed rounded-xl w-32 h-32 md:w-40 md:h-40 flex items-center justify-center overflow-hidden">
+          <div className="  rounded-xl w-32 h-32 md:w-40 md:h-40 flex items-center justify-center overflow-hidden">
             <img src={Img2} alt="Winter Collection" className="object-contain w-full h-full" />
           </div>
         </div>
