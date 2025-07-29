@@ -8,6 +8,7 @@ import Dresses from '../../components/dresses/Dresses';
 import Cards from '../../components/cards/Cards';
 import Trandy from '../../components/trandy/Trandy';
 import CartNavbar from '../../components/cartNavbar/CartNavbar';
+import Updated from '../../components/updated/Updated';
 
 const Dashboard = () => {
   return (
@@ -33,6 +34,7 @@ const Dashboard = () => {
         <Dresses/>
         <Cards/>
         <Trandy/>
+        <Updated/>
       </div>
     </div>
   );
