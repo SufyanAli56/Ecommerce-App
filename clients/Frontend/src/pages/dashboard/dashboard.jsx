@@ -6,6 +6,7 @@ import Hero from '../../components/hero/Hero';
 import Banner from '../../components/banner/Banner';
 import Dresses from '../../components/dresses/Dresses';
 import Cards from '../../components/cards/Cards';
+import Trandy from '../../components/trandy/Trandy';
 
 const Dashboard = () => {
   return (
@@ -30,6 +31,7 @@ const Dashboard = () => {
         <Banner />
         <Dresses/>
         <Cards/>
+        <Trandy/>
       </div>
     </div>
   );
