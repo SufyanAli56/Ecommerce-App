@@ -7,13 +7,14 @@ import Banner from '../../components/banner/Banner';
 import Dresses from '../../components/dresses/Dresses';
 import Cards from '../../components/cards/Cards';
 import Trandy from '../../components/trandy/Trandy';
+import CartNavbar from '../../components/cartNavbar/CartNavbar';
 
 const Dashboard = () => {
   return (
     <div className="min-h-screen font-poppins bg-white">
       <Topbar />
       <MainNavbar />
-
+      <CartNavbar/>
       {/* Responsive layout */}
       <div className="flex flex-col lg:flex-row gap-4 px-4 mt-4">
         {/* Sidebar */}

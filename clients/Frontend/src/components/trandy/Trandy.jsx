@@ -1,22 +1,28 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import useCartStore from "../../store/cartStore";
 
 const Trandy = () => {
   const [products, setProducts] = useState([]);
+  const addToCart = useCartStore((state) => state.addToCart); // ✅ selector
+  const navigate = useNavigate();
 
   useEffect(() => {
+    let isMounted = true; // ✅ avoid state update after unmount
     const fetchTrandyProducts = async () => {
       try {
         const res = await axios.get("http://localhost:5000/api/products");
-        // Take products starting from index 6
         const trandyItems = res.data.slice(6);
-        setProducts(trandyItems);
+        if (isMounted) setProducts(trandyItems);
       } catch (err) {
         console.error("Error fetching trandy products:", err);
       }
     };
-
     fetchTrandyProducts();
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (
@@ -29,7 +35,7 @@ const Trandy = () => {
           {products.map((product) => (
             <div
               key={product._id}
-              className="border border-gray-200 rounded p-4 shadow"
+              className="border border-gray-200 rounded p-4 shadow flex flex-col"
             >
               <img
                 src={`http://localhost:5000/${product.image}`}
@@ -39,7 +45,23 @@ const Trandy = () => {
               <h3 className="text-lg font-semibold">{product.name}</h3>
               <p className="text-sm text-gray-600 mb-1">{product.description}</p>
               <p className="text-md font-bold">${product.price}</p>
-              <p className="text-xs text-gray-500">Category: {product.category}</p>
+              <p className="text-xs text-gray-500 mb-3">
+                Category: {product.category}
+              </p>
+
+              <button
+                onClick={() => addToCart(product)} // ✅ only on click
+                className="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 transition mb-2"
+              >
+                Add to Cart
+              </button>
+
+              <button
+                onClick={() => navigate(`/product/${product._id}`)}
+                className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition"
+              >
+                View Details
+              </button>
             </div>
           ))}
         </div>
