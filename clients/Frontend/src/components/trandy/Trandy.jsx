@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { FaShoppingCart, FaEye } from "react-icons/fa";
 import useCartStore from "../../store/cartStore";
 
 const Trandy = () => {
@@ -9,7 +10,7 @@ const Trandy = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const skipFirst = 6; // skip first 6 products
+  const skipFirst = 6;
   const addToCart = useCartStore((state) => state.addToCart);
   const navigate = useNavigate();
 
@@ -19,7 +20,7 @@ const Trandy = () => {
       try {
         setLoading(true);
         const res = await axios.get(`http://localhost:5000/api/products`);
-        const trandyItems = res.data.slice(skipFirst); // no pagination
+        const trandyItems = res.data.slice(skipFirst);
         if (isMounted) setProducts(trandyItems);
       } catch (err) {
         setError("Failed to load trending products. Please try again.");
@@ -41,6 +42,13 @@ const Trandy = () => {
     }
     addToCart({ ...product, quantity: 1 });
     toast.success(`✅ ${product.name} added to cart!`);
+  };
+
+  const handleViewDetails = (product) => {
+    toast.info(`🔍 Viewing details for ${product.name}`);
+    setTimeout(() => {
+      navigate(`/product/${product._id}`);
+    }, 500); // slight delay so user sees toast
   };
 
   if (loading) return <p className="p-6 text-center">Loading...</p>;
@@ -76,22 +84,27 @@ const Trandy = () => {
               </p>
 
               <div className="mt-auto flex justify-between items-center gap-2">
+                {/* Add to Cart Button */}
                 <button
                   onClick={() => handleAddToCart(product)}
                   disabled={product.stock <= 0}
-                  className={`px-3 py-1 rounded transition ${
+                  className={`flex items-center gap-2 px-3 py-1 rounded transition ${
                     product.stock <= 0
                       ? "bg-gray-400 cursor-not-allowed"
                       : "bg-amber-700 text-white hover:bg-amber-800"
                   }`}
                 >
+                  <FaShoppingCart className="text-white" />
                   Add to Cart
                 </button>
+
+                {/* View Details Button */}
                 <button
-                  onClick={() => navigate(`/product/${product._id}`)}
-                  className="bg-amber-700 text-white px-3 py-1 rounded hover:bg-amber-800 transition"
+                  onClick={() => handleViewDetails(product)}
+                  className="flex items-center gap-2 bg-amber-700 text-white px-3 py-1 rounded hover:bg-amber-800 transition"
                 >
-                  View Details
+                  <FaEye className="text-white" />
+                  View
                 </button>
               </div>
             </div>
@@ -103,4 +116,3 @@ const Trandy = () => {
 };
 
 export default Trandy;
-

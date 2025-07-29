@@ -2,7 +2,7 @@ import React from 'react';
 
 const Updated = () => {
   return (
-    <div className="bg-[#bdeeea] py-12 px-6 text-center">
+    <div className="bg-[#bdeeea] py-18 px-8 text-center">
       <h2 className="text-3xl font-bold text-gray-800 mb-3">
         Stay Updated
       </h2>
