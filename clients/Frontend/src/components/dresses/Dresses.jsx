@@ -7,8 +7,12 @@ const AllProducts = () => {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
+        // Option 1: If backend supports limit
+        // const res = await axios.get("http://localhost:5000/api/products?limit=6");
+
+        // Option 2: Slice in frontend
         const res = await axios.get("http://localhost:5000/api/products");
-        setProducts(res.data);
+        setProducts(res.data.slice(0, 6)); // first 6 products
       } catch (err) {
         console.error("Error fetching products:", err);
       }
@@ -26,12 +30,11 @@ const AllProducts = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {products.map((product) => (
             <div key={product._id} className="border border-gray-200 rounded p-4 shadow">
-             <img
-  src={`http://localhost:5000/${product.image}`}
-  alt={product.name}
-  className="w-full h-78 object-cover object-top rounded mb-3 transition-transform duration-300 transform hover:scale-105"
-/>
-
+              <img
+                src={`http://localhost:5000/${product.image}`}
+                alt={product.name}
+                className="w-full h-78 object-cover object-top rounded mb-3 transition-transform duration-300 transform hover:scale-105"
+              />
               <h3 className="text-lg font-semibold">{product.name}</h3>
               <p className="text-sm text-gray-600 mb-1">{product.description}</p>
               <p className="text-md font-bold">${product.price}</p>
