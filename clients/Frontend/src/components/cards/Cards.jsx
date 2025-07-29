@@ -17,7 +17,7 @@ const Cards = () => {
           <p className="text-sm text-[#8B4513] font-semibold">20% OFF THE ALL ORDER</p>
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mt-2 mb-3 md:mb-4">Spring Collection</h2>
           <div className="flex justify-center sm:justify-start">
-            <button className="border border-[#8B4513] cursor-pointer text-[#8B4513] px-4 py-2 md:px-6 md:py-2 rounded-md hover:bg-[#8B4513] hover:text-white transition duration-300 transform hover:scale-105">
+            <button className="border border-[#8B4513] cursor-pointer text-[#8B4513] px-4 py-2 md:px-6 md:py-2  hover:bg-[#8B4513] hover:text-white transition duration-300 transform hover:scale-105">
               Shop Now
             </button>
           </div>
@@ -30,7 +30,7 @@ const Cards = () => {
           <p className="text-sm text-[#8B4513] font-semibold">20% OFF THE ALL ORDER</p>
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mt-2 mb-3 md:mb-4">Winter Collection</h2>
           <div className="flex justify-center sm:justify-end">
-            <button className="border border-[#8B4513] cursor-pointer text-[#8B4513] px-4 py-2 md:px-6 md:py-2 rounded-md hover:bg-[#8B4513] hover:text-white transition duration-300 transform hover:scale-105">
+            <button className="border border-[#8B4513] cursor-pointer text-[#8B4513] px-4 py-2 md:px-6 md:py-2  hover:bg-[#8B4513] hover:text-white transition duration-300 transform hover:scale-105">
               Shop Now
             </button>
           </div>
